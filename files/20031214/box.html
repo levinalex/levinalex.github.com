@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>test</title>
+<style type="text/css">
+
+  div p{
+    text-align:justify;
+    margin:3em;
+  }
+
+  div::after{
+    margin:0; padding:0;
+    position:absolute;
+    text-align:right;
+    content:url(lr.gif);
+
+    bottom:0px; left:0px; height:43px; right:0em;
+
+    background-image:url(ll.gif);
+    background-repeat:no-repeat;
+    background-position:0% 1px;
+   }
+
+  div:before{
+    margin:0; padding:0;
+    text-align:right;
+    content:"";
+    position:absolute;
+    top:0px; left:0px; height:400px; right:0em;
+
+    background-image:url(ur.gif);
+    background-repeat:no-repeat;
+    background-position:100% 0%;
+  }
+
+  div{
+    position:relative;
+    margin:0em; padding:0em;
+    border:1px solid #fff;
+
+    z-index:2;
+
+    overflow:hidden;
+
+    background-image:url(ul.gif);
+    background-position:0px 0px;
+    background-repeat:no-repeat;
+  }
+</style>
+</head>
+
+<body>
+
+  <div id="box" class="section">
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum luctus auctor urna. Sed volutpat metus at magna. Donec sed magna. Mauris tristique diam ut erat. Nunc posuere, purus in dictum facilisis, justo ipsum bibendum nisl, et volutpat diam est condimentum mi. Maecenas non lacus. Proin lectus neque, pellentesque eu, consectetuer placerat, cursus fringilla, lacus. Aenean est turpis, pharetra quis, egestas a, dapibus vel, quam. Aliquam erat volutpat. Sed feugiat, nulla nec adipiscing fermentum, nunc ante elementum purus, a vehicula mi enim eget dolor. Aliquam condimentum sapien at neque. In ut ante. </p>
+  </div>
+
+</body>
+</html>

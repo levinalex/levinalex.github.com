@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Block in Inline Testcase</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <style type="text/css">
+    li{padding-left:1em;}
+
+    .e1 a,
+    .e1 span,
+    .e1 div{display:block;margin:0.5em; padding:0.5em;}
+
+  	.e1 .outer{border:1px solid #f00; background-color:#fdd;}
+  	.e1 .middle{border:1px solid #0f0; background-color:#dfd;}
+  	.e1 .inner{border:1px solid #00f; background-color:#ddf;}
+
+  	.e1 .outer:hover .middle{background-color:#f00;}
+  	.e1 .middle:hover {text-transform:uppercase;}
+  	.e1 .middle:hover .inner{background-color:#0f0;}
+  	.e1 .inner:hover {color:#00f;font-weight:bold;}
+  	
+  	.middle .inner{text-decoration:underline;}
+  </style>
+</head>
+<body>
+<h1>&lt;a&gt;&lt;div&gt;&lt;/div&gt;&lt;/a&gt;</h1>
+<ol>
+  <li id="nr11">
+    <p>Everything is fine here.</p>
+    <div class="e1">
+      <div class="outer">
+         &lt;div class=&quot;outer&quot;&gt;
+        <div class="middle">
+          &lt;div class=&quot;middle&quot;&gt;
+          <div class="inner">
+             &lt;div class=&quot;inner&quot;&gt;text&lt;/div&gt;
+          </div>
+          &lt;/div&gt;
+        </div>
+        &lt;/div&gt;
+      </div>
+    </div> <!-- .e1 -->
+  </li>
+
+  <li id="nr12">
+    <p>replaced <em>div.middle</em> with <em>a.middle</em></p>
+    <p>The <a href="http://validator.w3.org/check/referer">Validator complains</a> about div.inner. This is because <a href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#h-7.5.3">inline elements may contain only data and other inline elements in HTML4.1</a></p>
+    <p>Two Screenshots that show <a href="opera7win.gif">what Opera7/Win does</a> and what <a href="mozilla13bwin.gif">Mozilla1.3b/Win does</a></p>
+    <p>Note that the CSS-Rule <code>.middle .inner{text-decoration:underline;}</code> stopped working.</p>
+    <div class="e1">
+      <div class="outer">
+        &lt;div class=&quot;outer&quot;&gt;
+        <a class="middle">
+          &lt;a class=&quot;middle&quot; style=&quot;display:block;&quot;&gt;
+          <div class="inner">
+             &lt;div class=&quot;inner&quot;&gt;text&lt;/div&gt;
+          </div>
+          &lt;/a&gt;
+        </a>
+        &lt;/div&gt;
+      </div>
+    </div> <!-- .e1 -->
+  </li>
+
+  <li id="nr13">
+    <p>Nearly the same as <a href="#nr12">#12</a>, I threw in an &lt;ins&gt;-Element. Still illegal HTML 4 but the Validator cannot detect it.</p>
+    <div class="e1">
+      <div class="outer">
+        &lt;div class=&quot;outer&quot;&gt;
+        <a class="middle">
+        &lt;a class=&quot;middle&quot; style=&quot;display:block;&quot;&gt;
+        <ins>
+         &lt;ins&gt;
+          <div class="inner">
+             &lt;div class=&quot;inner&quot;&gt;text&lt;/div&gt;
+          </div>
+          &lt;/ins&gt;
+        </ins>
+        &lt;/a&gt;
+        </a>
+        &lt;/div&gt;
+      </div>
+    </div> <!-- .e1 -->
+  </li>
+
+  <li id="nr14">
+    <p>I replaced the innermost div with a span. Works now.</p>
+    <div class="e1">
+      <div class="outer">
+        &lt;div class=&quot;outer&quot;&gt;
+        <a class="middle">
+          &lt;a class=&quot;middle&quot;&gt;
+          <span class="inner">
+             &lt;span class=&quot;inner&quot; style=&quot;display:block;&quot;&gt;text&lt;/span&gt;
+          </span>
+          &lt;/a&gt;
+        </a>
+        &lt;/div&gt;
+      </div>
+    </div> <!-- .e1 -->
+  </li>
+
+  <li id="nr15">
+    <p>This is as illegal as it gets. Opera and Mozilla agree to render this as three seperate Blocks</p>
+    <div class="e1">
+      <a class="outer">
+        &lt;a class=&quot;outer&quot;&gt;
+        <a class="middle">
+          &lt;a class=&quot;middle&quot;&gt;
+          <a class="inner">
+             &lt;a class=&quot;inner&quot;&gt;text&lt;/a&gt;
+          </a>
+          &lt;/a&gt;
+        </a>
+        &lt;/a&gt;
+      </a>
+    </div> <!-- .e1 -->
+  </li>
+</ol>
+
+<h2>Styles</h2>
+<pre> &lt;style type="text/css"&gt;
+  .e1 a,
+  .e1 span,
+  .e1 div{display:block;margin:0.5em; padding:0.5em;}
+
+  .e1 .outer {border:1px solid #f00; background-color:#fdd;}
+  .e1 .middle{border:1px solid #0f0; background-color:#dfd;}
+  .e1 .inner {border:1px solid #00f; background-color:#ddf;}
+
+  .e1 .outer:hover .middle {background-color:#f00;}
+  .e1 .middle:hover        {text-transform:uppercase;}
+  .e1 .middle:hover .inner {background-color:#0f0;}
+  .e1 .inner:hover         {color:#00f;font-weight:bold;}
+  &lt;/style&gt;</pre>
+
+</body>
+</html>

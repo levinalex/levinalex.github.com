@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Vertikale Unterteilung</title>
+		<style type="text/css">
+		  html, body, #eins, #zwei{margin:0; padding:0; min-height:100%;}
+			* html, * html body,* html #eins, * html #zwei{height:100%;} /* Hack: IE/win interpretiert height als min-height*/
+			body{min-width:20em; background-color:green;}
+			#eins{position:absolute; left:0; width:50%; background-color:yellow;}
+			#zwei{position:absolute; left:50%; width:50%; background-color:blue;}
+			p{margin:2em;}
+		</style>
+	</head>
+	<body>
+		<div id="eins">
+		  <p>Etwas Text in einem Absatz</p><p>Noch ein Absatz</p>
+		</div>
+		<div id="zwei">
+		  <p>Etwas Text in einem weiteren Absatz</p><p>Noch ein Absatz</p>
+		</div>
+	</body>
+</html>

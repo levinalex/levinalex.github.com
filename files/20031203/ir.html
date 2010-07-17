@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link rel="author" href="http://levin.grundeis.net" />
+  <title>Image replacement Overwiew</title>
+
+  <style type="text/css">
+    body{font-family:sans-serif;}
+    table{border-collapse:collapse;}
+    td{color:#050;background-color:#ddd;}
+	td,th{margin:0em; padding:0.2em;border:1px solid #222;}
+	strong{color:#f00;font-weight:bold;}
+	table em{color:#900;font-style:normal;}
+  </style>
+</head>
+
+<body>
+  <h1>Image replacement decision grid</h1>
+  <table>
+    <tr>
+		<th rowspan="3">Method</th>
+		<th colspan="4">Support</th>
+		<th rowspan="3">read by Screenreader</th>
+		<th rowspan="3">Text selectable</th>
+		<th rowspan="3">Image printable</th>
+		<th rowspan="3">When to use</th>
+	</tr>
+	<tr>
+		<th colspan="2">CSS enabled</th>
+		<th colspan="2">CSS disabled</th>
+	</tr>
+	<tr>
+		<th colspan="1">Images enabled</th>
+		<th colspan="1">Images disabled</th>
+		<th colspan="1">Images enabled</th>
+		<th colspan="1">Images disabled</th>
+	</tr>
+	<tr>
+	  <th>&lt;img&gt;</th>
+	  <td>Image</td>
+	  <td>Text <a href="#note1">[1]</a></td>
+	  <td><b>Image</b></td>
+	  <td>Text <a href="#note1">[1]</a></td>
+	  <td>Yes</td>
+	  <td>? <a href="#note2">[2]</a></td>
+	  <td>Yes</td>
+	  <td>when the Image is actual <em>content</em></td>
+	</tr>
+
+	<tr>
+	  <th><a href="http://www.literarymoose.info/=/destroy/object-image-replacement.xhtml">&lt;Object&gt;</a> <a href="#note6">[6]</a></th>
+	  <td>Image (or anything else)</td>
+	  <td>Fallback Content</td>
+	  <td>Image (or anything else)</td>
+	  <td>Fallback Content</td>
+	  <td>? <a href="#note6">[6]</a></td>
+	  <td><span title="Only if the Image is unavailable">No</span></td>
+          <td>Yes</td>
+          <td>When the image is content but needs to be described with complex markup if it is unavailable. <a href="#note6">Support?</a></td>
+          
+	</tr>
+
+	<tr>
+	  <th><a href="http://levin.grundeis.net/files/20030809/alternatefir.html">cover up</a> <del><a href="http://www.mezzoblue.com/archives/2003/12/12/accessible_i/#c002804">Andrew</a></del> <a href="#note5">[5]</a></th>
+	  <td>Image</td>
+	  <td>Text</td>
+	  <td>Text</td>
+	  <td>Text</td>
+	  <td>Yes</td>
+	  <td>Yes</td>
+	  <td><strong>No</strong></td>
+	  <td>decoration</td>
+	</tr>
+
+    <tr>
+	  <th><a href="http://phark.typepad.com/phark/2003/08/accessible_imag.html">Phark</a>, <a href="http://www.moronicbajebus.com/playground/cssplay/image-replacement/">Leahy/Langridge</a></th>
+	  <td>Image</td>
+	  <td><strong>Nothing</strong></td>
+	  <td>Text</td>
+	  <td>Text</td>
+	  <td>Yes</td>
+	  <td>Yes</td>
+	  <td><strong>No</strong></td>
+	  <td>decoration, if image needs to be transparent or markup can't be changed</td>
+	</tr>
+	<tr>
+	  <th><a href="http://www.literarymoose.info/=/synopsis/ir.xhtml">CSS2 :before</a></th>
+	  <td>Image</td>
+	  <td>Text</td>
+	  <td>Text</td>
+	  <td>Text</td>
+	  <td>Yes</td>
+	  <td>Yes</td>
+	  <td><strong>No</strong></td>
+	  <td>(<em>only works in Opera7</em> and upcoming Safari, degrades nicely, support may grow soon)</td>
+	</tr>
+	<tr>
+	  <th><a href="http://www.literarymoose.info/=/synopsis/picturehead.xhtml">CSS3 Content-Property</a> <a href="#note4">[4]</a></th>
+	  <td>Image</td>
+
+    <td><strong>&quot;Image&quot;</strong><!-- bug-132570@bugs.opera.com --></td>
+	<td>Text</td>
+	<td>Text</td>
+	<td>Yes <a href="#note3">[3]</a></td>
+	<td><strong>No</strong></td>
+	<td>Yes</td>
+	<td>(<em>only works in Opera 7</em>, degrades nicely, relies on CSS3)</td>
+	</tr>
+
+	<tr>
+	  <th><a href="http://www.stopdesign.com/also/articles/replace_text/">FIR</a></th>
+	  <td>Image</td>
+	  <td><strong>Nothing</strong></td>
+      <td>Text</td>
+	  <td>Text</td>
+	  <td><strong>No</strong></td>
+	  <td><strong>No</strong></td>
+	  <td><strong>No</strong></td>
+	  <td>never, actually, <a href="http://www.mezzoblue.com/archives/2003/12/12/accessible_i/#c002804">convert to this</a></td>
+	</tr>
+  </table>
+  <dl>
+    <dt id="note1">[1]</dt>
+	<dd>Safari will <strong>not</strong> show alt-text when images are disabled</dd>
+	<dt id="note2">[2]</dt>
+	<dd>Opera does not allow alt text to be selected. I'd consider that a bug in Opera. I've not tested it in other browsers</dd>
+	<dt id="note3">[3]</dt>
+	<dd>There is no Screenreader that supports CSS3</dd>
+	<dt id="note4">[4]</dt>
+	<dd>Can be used <em>in addition to</em> the other techniques to provide multiple backgrounds or to provide printable images with CSS</dd>
+	<dt id="note5">[5]</dt>
+	<dd>Here is a <a href="http://levin.grundeis.net/files/20031217/test.html">testcase</a>
+ Here is a <a href="http://wd.mrclay.org/tests/ir/">more complex testcase</a> that shows some problems with multiple layers 
+</dd>
+	<dt id="note6">[6]</dt>
+	<dd>I do not know how browsers other than Opera 7.5 handle this</dd>
+  </dl>
+
+  <hr />
+  <p><a href="mailto:levin@grundeis.net">Levin Alexander</a>, 2004-03-22<br />
+  Teil von <a href="http://grundeis.net">grundeis.net</a>
+  </p>
+</body>
+</html>

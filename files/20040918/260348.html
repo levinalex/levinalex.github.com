@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+        "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Relative positioning with percentages inside auto-height containing block</title>
+		<style type="text/css">
+			#one{background-color:lime; border:2px solid blue;}
+			#two{background-color:gray;}
+			
+			#one{
+				position:relative;
+				height:auto;
+			}
+			#two{
+				position:relative;
+				top:100%;
+				height:100px;
+			}
+	</style>
+</head>
+
+<body>
+	<div id="one">
+		<div id="two">A 100px high green box should be visible.  See <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=260348">Bug 260348</a>.</div>
+	</div>
+</body>
+
+</html>

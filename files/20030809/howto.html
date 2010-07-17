@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+  <title>Bildbearbeitungs-Howto für Photoshop 7</title>
+  <style>
+         body{
+              background-color:#ddd;
+              font-size:18px;
+              font-family:verdana, helvetica, sans-serif;
+         }
+         body h1{font-size:22px; font-weight:normal;}
+         address{font-size:12px; font-style:normal;}
+  </style>
+</head>
+<body>
+  <h1>In Photoshop Köpfe zusammenschieben</h1>
+  <p>
+     Zuerst das <a href="steffi-original.jpg">Originalbild</a> und das <a href="steffi.psd">Ergebnis als Photoshop-</a> und <a href="steffi.jpg">JPEG Datei</a> <small>(Bei der Photoshop-Datei ist der Bildausschnitt noch nicht angepasst, ich hab' so viel wie möglich 'drangelassen)</small>
+  </p>
+  <p>Und so wird's gemacht:</p>
+  <ol>
+    <li>
+        <p>Bild öffnen</p>
+    </li>
+    <li>
+        <p>Hintergrundebene duplizieren</p>
+        <img src="img/01_duplizieren.gif" alt="In der Ebenen-Palette mit der rechten Maustaste auf die Hinergrundebene klicken und 'Ebene duplizieren' auswählen"/>
+    </li>
+    <li>
+        <p>In den Maskierungsmodus wechseln ( <kbd>Q</kbd>)</p>
+        <img src="img/02_maskierungsmodus.gif" alt="Der Buttn befindet sich in der Werkzeugleiste unter der Farbauswahl. Shortcut:Q" />
+    </li>
+    <li>
+        <p>Das Pinsel-Werkzeug (<kbd>B</kbd>) und eine große Spitze mit unscharfem Rand wählen.</p>
+        <img src="img/03_pinsel.gif" alt="Gut geeignet ist ein etwa 300 Pixel breiter Pinsel mit maximaler Kantenunschärfe"/>
+    </li>
+    <li>
+        <p>Jetzt mit dem (schwarzen) Pinsel alle Bereiche markieren, die später undurchsichtig sein sollen.</p>
+        <img src="img/04_maskieren.jpg" alt="Merkierte Bereiche erscheinen rot"/>
+    </li>
+    <li>
+        <p>Den Maskierungsmodus beenden (<kbd>Q</kbd>). Die eben rot markierten Bildteile sind jetzt ausgewählt.</p>
+        <img src="img/05_maskierungsmodus.jpg" />
+    </li>
+    <li>
+        <p>Jetzt mit einem Klick auf den "Ebenenmaske-hinzufügen"-Knopf alle nicht markierten Teile der Ebene durchsichtig machen.</p>
+        <img src="img/06_ebenenmaske.gif" alt="Der Button befindet sich unten in der Ebenen-Palette"/>
+    </li>
+    <li>
+        <p>Mit ausgewähltem "Verschieben"-Werkzeug (<kbd>V</kbd>) können die beiden Köpfe dichter zusammengeschoben werden.</p>
+        <img src="img/07_verschieben.gif" alt="Verschieben-Werkzeug in der Werkzeugleiste auswählen"/>
+        <img src="img/08_verschieben.jpg" alt="Steffis Kopf wird an de richtige Stelle gezogen."/>
+    </li>
+    <li>
+        <p>Jetzt Steffis Kopf etwas drehen (immernoch mit dem "Verschieben"-Werkzeug. Wenn der Winkel stimmt mit <kbd>Enter</kbd> bestätigen.</p>
+        <img src="img/09_drehen.jpg" alt="ein Klick leicht ausserhalb der 'Anfasser' dreht die Ebene"/>
+    </li>
+    <li>
+        <p>Wenn die Transparenz noch nicht ganz stimmt:</p>
+        <p>Die Ebenenmaske zur Bearbeitung auswählen</p>
+        <img src="img/10_maske.gif" />
+        <p>und jetzt mit einem Pinsel Bildbereiche durchsichtig (schwarz) oder undurchsichtig (weiß) machen.</p>
+        <img src="img/11_ausbessern.jpg" />
+    </li>
+    <li>
+        <p>Mit dem Freistellen-Werkzeug überflüssige Bildteile wegschneiden</p>
+        <img src="img/12_freistellen.jpg" />
+    </li>
+    <li>
+        <p>Speichern</p>
+    </li>
+  </ol>
+  <address>2003-08-09; <a href="mailto:levin@grundeis.net">Levin Alexander</a> Teil von <a href="http://www.grundeis.net">grundeis.net</a></address>
+</body>
+</html>
