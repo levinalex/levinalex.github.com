@@ -64,12 +64,16 @@ ul.posts {
 
   ul.posts li {
     line-height: 1.75em;
+    font-family: Monaco, "Courier New", monospace; 
+    font-size: 80%;
   }
 
   ul.posts span {
     color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
+  }
+  
+  ul.posts a {
+    color: #333;
   }
 
 /*****************************************************************************/
@@ -87,13 +91,12 @@ ul.posts {
 }
 
 .title {
-  color: #a00;
   font-weight: bold;
   margin-bottom: 2em;
 }
 
   .site .title a {
-    color: #a00;
+    color: #333;
     text-decoration: none;
   }
 
@@ -102,7 +105,6 @@ ul.posts {
   }
 
   .site .title a.extra {
-    color: #aaa;
     text-decoration: none;
     margin-left: 1em;
   }
@@ -129,7 +131,7 @@ ul.posts {
     }
 
       .site .footer .contact a {
-        color: #8085C1;
+        color: #89c;
       }
 
     .site .footer .rss {
